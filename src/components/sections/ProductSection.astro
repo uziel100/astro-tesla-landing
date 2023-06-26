@@ -1,0 +1,42 @@
+---
+export interface Props {
+  title: string;
+  linkDriving: string;
+  coverUrl: string;
+}
+
+const { title, linkDriving, coverUrl } = Astro.props;
+---
+
+<section
+  class=`h-screen text-center w-full flex flex-col items-center justify-between bg-[url('${coverUrl}')] bg-cover bg-center relative]`
+>
+  <header class="w-full mt-28 flex-auto z-10 text-black">
+    <h1 class="text-5xl font-bold">{title}</h1>
+    <a href={linkDriving}>
+      <p class="mt-4 underline">Agende una demostración de manejo</p>
+    </a>
+  </header>
+  <footer
+    class="flex flex-col justify-center items-center gap-5 flex-2 mb-4 z-10"
+  >
+    <div class="flex gap-3">
+      <a
+        href="#"
+        class="px-14 py-3 rounded bg-[#EFEFEF] transition-all duration-1000 text-black flex-0"
+      >
+        Explora el inventario
+      </a>
+      <a
+        href="#"
+        class="px-14 py-3 rounded bg-[#585A5D] transition-all duration-1000 text-white flex-0"
+      >
+        Orden personalizada
+      </a>
+    </div>
+    <p>
+      3 meses de supercarga gratis si recibes tu vehículo de inventario nuevo
+      antes del 30 de junio.
+    </p>
+  </footer>
+</section>

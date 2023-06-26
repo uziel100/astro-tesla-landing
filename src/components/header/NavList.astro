@@ -1,0 +1,16 @@
+---
+import type { NavItemProps } from "./NavItem.astro";
+import NavItem from "./NavItem.astro";
+
+export interface Props {
+  items: NavItemProps[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="text-white">
+  <ul class="flex">
+    {items.map(({ href, text }) => <NavItem text={text} href={href} />)}
+  </ul>
+</nav>
